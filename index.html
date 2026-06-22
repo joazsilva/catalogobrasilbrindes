@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Brasil Brindes - Catálogo digital de brindes personalizados. Sacolas, canetas, chaveiros e muito mais.">
+  <meta name="keywords" content="brindes personalizados, sacolas papel, canetas, chaveiros, Brasil Brindes">
+  <title>Brasil Brindes | Catálogo Digital</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles/style.css">
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════
+     HEADER
+════════════════════════════════════════════ -->
+<header>
+  <div class="header-inner">
+    <div style="display:flex;align-items:center;gap:1rem">
+      <div id="navBackBtn" class="nav-back hidden" onclick="goBack()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+        <span id="navBackLabel">Voltar</span>
+      </div>
+      <div class="logo" onclick="goHome()">
+        <div class="logo-mark">BB</div>
+        <div class="logo-text">
+          <span>Brasil Brindes</span>
+          <span>Embalagens & Brindes</span>
+        </div>
+      </div>
+      <div id="breadcrumbWrap" class="breadcrumb hidden" style="padding-left:0.5rem"></div>
+    </div>
+    <div class="header-actions">
+      <a href="https://instagram.com/_brasilbrindes" target="_blank" class="header-btn hide-mobile" title="Instagram">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/></svg>
+      </a>
+      <a href="https://wa.me/5599991284929" target="_blank" class="header-btn btn-whatsapp-header hide-mobile" title="WhatsApp">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.125.558 4.121 1.532 5.845L.057 23.454a.5.5 0 00.595.633l5.77-1.507A11.946 11.946 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.886 0-3.65-.5-5.178-1.375l-.37-.214-3.826 1 1.027-3.71-.236-.385A9.956 9.956 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+        <span>WhatsApp</span>
+      </a>
+      <button onclick="toggleTheme()" class="header-btn" title="Alternar tema" id="themeBtn">
+        <svg id="iconSun"  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        <svg id="iconMoon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" style="display:none"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ═══════════════════════════════════════════
+     PÁGINA: HOME
+════════════════════════════════════════════ -->
+<div id="page-home" class="page active">
+  <div class="section" id="cats">
+    <div class="section-header">
+      <h2>Catálogo de Produtos</h2>
+      <p>Clique em uma categoria para explorar todos os produtos disponíveis</p>
+    </div>
+    <div class="category-grid" id="categoryGrid"></div>
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-logo">Brasil Brindes</div>
+      <div class="footer-links">
+        <a href="https://instagram.com/_brasilbrindes" target="_blank" class="footer-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/></svg>
+          @_brasilbrindes
+        </a>
+        <a href="https://wa.me/5599991284929" target="_blank" class="footer-link">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="15" height="15"><path d="M12 0C5.373 0 0 5.373 0 12c0 2.125.558 4.121 1.532 5.845L.057 23.454a.5.5 0 00.595.633l5.77-1.507A11.946 11.946 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.886 0-3.65-.5-5.178-1.375l-.37-.214-3.826 1 1.027-3.71-.236-.385A9.956 9.956 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+          +55 99 99128-4929
+        </a>
+      </div>
+      <div class="footer-copy">© 2026 Brasil Brindes · Todos os direitos reservados</div>
+    </div>
+  </footer>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     PÁGINA: CATEGORIA
+════════════════════════════════════════════ -->
+<div id="page-category" class="page">
+  <div class="search-wrap">
+    <div class="search-inner">
+      <div class="search-box">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        <input type="text" class="search-input" id="productSearch" placeholder="Buscar produto..." oninput="filterProducts()">
+      </div>
+      <span class="results-count" id="resultsCount"></span>
+    </div>
+  </div>
+  <div class="section">
+    <div class="section-header" id="categoryHeader"></div>
+    <div class="product-grid" id="productGrid"></div>
+    <div id="noProducts" class="empty-state hidden">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      <h3>Nenhum produto encontrado</h3>
+      <p>Tente outros termos de busca</p>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     PÁGINA: PRODUTO
+════════════════════════════════════════════ -->
+<div id="page-product" class="page">
+  <div class="product-detail" id="productDetailContent"></div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     WHATSAPP FAB
+════════════════════════════════════════════ -->
+<a href="https://wa.me/5599991284929" target="_blank" class="whatsapp-fab" title="Fale pelo WhatsApp" id="whatsappFab">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.125.558 4.121 1.532 5.845L.057 23.454a.5.5 0 00.595.633l5.77-1.507A11.946 11.946 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.886 0-3.65-.5-5.178-1.375l-.37-.214-3.826 1 1.027-3.71-.236-.385A9.956 9.956 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+</a>
+
+<script src="/app/app.js"></script>
+</body>
+</html>
