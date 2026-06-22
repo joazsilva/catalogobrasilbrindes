@@ -167,7 +167,7 @@ function renderCategories() {
       <div class="cat-info">
         <h3>${cat.name}</h3>
         <div class="cat-meta">
-          <span class="cat-count">${count} ${count === 1 ? 'produto' : 'produtos'}</span>
+          <span></span>
           <div class="cat-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
         </div>
       </div>
@@ -220,7 +220,7 @@ function renderProductGrid(catId, query = '') {
         <h3>${p.name}</h3>
         <p class="prod-desc">${p.shortDesc}</p>
         <div class="prod-footer">
-          ${p.minQty ? `<span class="min-qty">Mín: ${p.minQty} un</span>` : '<span></span>'}
+          <span></span>
           <button class="btn btn-primary btn-sm">Ver Detalhes</button>
         </div>
       </div>
@@ -290,14 +290,12 @@ function showProduct(prodId) {
         <h1>${prod.name}</h1>
         <div class="product-meta-chips">
           ${cat    ? `<span class="chip chip-green">${cat.name}</span>` : ''}
-          ${prod.minQty  ? `<span class="chip chip-blue">Mín. ${prod.minQty} unidades</span>` : ''}
           ${prod.material ? `<span class="chip chip-gray">${prod.material}</span>` : ''}
         </div>
         <p class="product-desc">${prod.desc || prod.shortDesc}</p>
         <div class="specs-grid">
           ${prod.measures  ? `<div class="spec-item"><div class="spec-label">Medidas</div><div class="spec-value">${prod.measures}</div></div>` : ''}
           ${prod.material  ? `<div class="spec-item"><div class="spec-label">Material</div><div class="spec-value">${prod.material}</div></div>` : ''}
-          ${prod.minQty    ? `<div class="spec-item"><div class="spec-label">Qtd. Mínima</div><div class="spec-value">${prod.minQty} unidades</div></div>` : ''}
           ${cat            ? `<div class="spec-item"><div class="spec-label">Categoria</div><div class="spec-value">${cat.name}</div></div>` : ''}
         </div>
         ${colorsHtml}
